@@ -1,6 +1,5 @@
 import './App.css';
 import './bootstrap.min.css';
-import React, { Component } from 'react';
 
 
 function Hero() {
@@ -12,6 +11,12 @@ function Hero() {
   </div>)
 }
 
+function Book({title}) {
+  return (<div className='answer'>
+    <h4>{title}</h4>
+  </div>)
+}
+
 function Turn({author, books}) {
   return (<div className='row turn' style={{backgroundColor: "white"}}>
     <div className='col-4 offset-1'>
@@ -19,7 +24,7 @@ function Turn({author, books}) {
     </div>
 
     <div className='col-6'>
-      {books.map((title) => <p>{title}</p>)}
+      {books.map((title) => <Book title={title} key={title}></Book>)}
     </div>
     
   </div>);
@@ -35,26 +40,22 @@ function Footer() {
   return (<div id="footer" className='row'>
     <div className='col-12'>
       <p className='text-muted credit'>
-        All images are from <a href="https://www.google.com"></a>
+        All images are from <a href="https://commons.wikimedia.org/wiki/Main_Page"> Wikepedia Commons</a>
       </p>
     </div>
 
   </div>);
 }
 
-class AuthorQuiz extends Component {
-  render() {
+function AuthorQuiz({turnData}) {
   return (
       <div className='container-fluid'>
         <Hero/>
-        <Turn/>
+        <Turn {...turnData}/>
         <Continue/>
         <Footer/>
       </div>
       );
-  }
 }
-
-
 
 export default AuthorQuiz;

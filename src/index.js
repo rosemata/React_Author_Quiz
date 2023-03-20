@@ -5,14 +5,21 @@ import AuthorQuiz from './AuthorQuiz';
 
 const authors = [{
   name: 'Letter Apple',
-  imageUrl: 'images/authors/a.jpeg',
+  imageURL: 'images/authors/a.jpeg',
   imageSource: 'Wikimedia Commons',
-  books: ['The Adventures of Huckleberry Finn']
+  books: [
+    'The Adventures of Huckleberry Finn',
+    'Life on the Mississippi',
+    'Roughing it']
 }];
 
+const state = {
+    turnData: {
+    author: authors[0],
+    books: authors[0].books
+  }
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <AuthorQuiz />
-  </React.StrictMode>
+  root.render(<AuthorQuiz {...state}/>
 );

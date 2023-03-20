@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.authorimage{
+  max-height: 100%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +39,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.turn > div {
+  height: 400px;
+}
+
+.turn {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.answer {
+  background-color: pink;
+  border: lightgray;
+  margin-bottom: 20px;
+  padding: 15px 30px 15px 15px;
+  border-left: 5px solid lightblue;
+  cursor: pointer;
+}
+
+.answer:hover {
+  background-color: plum;
 }
