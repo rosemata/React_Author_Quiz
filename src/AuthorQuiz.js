@@ -13,7 +13,7 @@ function Hero() {
 }
 
 function Turn({author, books}) {
-  return (<div className='row turn' style={{backgroundColor: "lightblue"}}>
+  return (<div className='row turn' style={{backgroundColor: "white"}}>
     <div className='col-4 offset-1'>
       <img src={author.imageURL} className="authorimage" alt="Author"/>
     </div>
